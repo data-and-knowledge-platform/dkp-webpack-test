@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dkp-main-ui-view
+  labels:
+    app: dkp-main-ui-view
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dkp-main-ui-view
+  template:
+    metadata:
+      labels:
+        app: dkp-main-ui-view
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+      - name: dkp-main-ui-view
+        imagePullPolicy: Always
+        image: masdkpacr.azurecr.io/dkpmainuiview
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2" 
+        ports:
+        - containerPort: 3000
+        stdin: true
+        tty: true
+        envFrom:
+         - configMapRef:
+             name: dkp-main-ui-view-configmap
+         - secretRef:
+             name: dkp-main-ui-view-secret
+          #imagePullSecrets:
+          #- name: "harbor-creds"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: dkp-main-ui-view
+spec:
+  selector:
+    app: dkp-main-ui-view
+  ports:
+  - port: 3000
+    targetPort: 80

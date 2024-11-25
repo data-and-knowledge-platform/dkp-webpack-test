@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dkp-main-ui-view-configmap
+data:
+  DKP_SERVICE_NAME: "dkp-main-ui-view"
+  DKP_SERVICE_MAIN_PORT: "3000"
+  DKP_MAIN_UI_BACKEND_SCHEME: "http"
+  DKP_MAIN_UI_BACKEND_SERVICE_SERVICE_HOST: "dkp-main-ui-backend"
+  DKP_MAIN_UI_BACKEND_SERVICE_SERVICE_PORT: "3072"
+  CHOKIDAR_USEPOLLING: "True"
+  DANGEROUSLY_DISABLE_HOST_CHECK: "True"
+  DKP_TIMEZONE: "Asia/Singapore"
+  REACT_APP_ELLIPSE_LINK: "https://ellipse.masdkp.io"
+  REACT_APP_METADATASERVICE_LINK: "https://metadata.dkp.masdkp.io"
+  REACT_APP_SHARE_POINT_LINK: "https://sharepoint-recent-documents-dkpzz.qint.cp.mas.gov.sg"
+  REACT_APP_DATACOLLECTION_LINK: "https://metadata.masdkp.io"
+  REACT_APP_K_POLICY: "https://team.dms.mas.gov.sg/sites/K-Policy/Pages/MASDefault.aspx"
+  REACT_APP_K_CONNECT: "https://team.dms.mas.gov.sg/sites/K-Connect/Lists/Asset%20%20Overview/Consol%20KAI.aspx"
+  REACT_APP_NEWDATASET: "https://metadata.dkp.mas.gov.sg"
+  REACT_APP_MASDEFAULT: "https://home.dms.mas.gov.sg/Pages/MASDefault.aspx"
+  REACT_APP_K_CONNECTITEMS: "https://team.dms.mas.gov.sg/sites/K-Connect/Lists/KPOP%20Stars/AllItems.aspx"
+  REACT_APP_MATOMO_LINK: "https://matomo.dkp.mas.gov.sg/"
+  SET_MAILTO_CONTENT_LIMIT: "2000"
+  REACT_APP_SET_CHATBOT_AUTHORIZATION_TOKEN_CHECK: "true"
+  ESLINT_NO_DEV_ERRORS: "true"
+  SKIP_PREFLIGHT_CHECK: "true"
+  REACT_APP_MATOMO_SITE_ID: "2"
+  REACT_APP_MATOMO_IA_SITE_ID: "5"
+  REMOVE_QUICK_VIEW: "true"
