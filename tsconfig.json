@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react", // For React 16 and below
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
