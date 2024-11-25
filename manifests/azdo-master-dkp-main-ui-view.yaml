@@ -17,32 +17,32 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '8d1b64e3-42d1-4744-8925-0f2cd069a315'
-  imageRepository: 'dkpmainuiview'
+  imageRepository: 'dkpwebpack'
   containerRegistry: 'masdkpacr.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
   artifact_path: 'manifests'
 
 stages:
-- stage: Scan
-  displayName: SonarQube Scan
-  jobs:
-  - job: Scan 
-    displayName: Run SonarQube scans with code coverage
-    pool:
-      name: mas-dkp-mgmt
-    steps:
-    - task: SonarQubePrepare@5
-      inputs:
-        SonarQube: 'SonarQube'
-        scannerMode: 'CLI'
-        configMode: 'manual'
-        cliProjectKey: 'data-and-knowledge-platform_dkp-main-ui-view'
-        cliSources: '.'
-    - task: SonarQubeAnalyze@5
-    - task: SonarQubePublish@5
-      inputs:
-        pollingTimeoutSec: '300'
+#- stage: Scan
+#  displayName: SonarQube Scan
+#  jobs:
+#  - job: Scan 
+#    displayName: Run SonarQube scans with code coverage
+#    pool:
+#      name: mas-dkp-mgmt
+#    steps:
+#    - task: SonarQubePrepare@5
+#      inputs:
+#        SonarQube: 'SonarQube'
+#        scannerMode: 'CLI'
+#        configMode: 'manual'
+#        cliProjectKey: 'data-and-knowledge-platform_dkp-main-ui-view'
+#        cliSources: '.'
+#    - task: SonarQubeAnalyze@5
+#    - task: SonarQubePublish@5
+#      inputs:
+#       pollingTimeoutSec: '300'
     #- task: sonar-buildbreaker@8
     #  inputs:
     #    SonarQube: 'SonarQube'
