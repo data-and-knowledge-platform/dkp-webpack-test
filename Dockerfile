@@ -9,7 +9,6 @@ RUN npm install -g npm@10.7.0
 RUN npm install --legacy-peer-deps
 RUN npm run build
 
-
 #FROM nginx:alpine
 FROM nginx:alpine AS nginx-base
 WORKDIR /usr/share/nginx/html
