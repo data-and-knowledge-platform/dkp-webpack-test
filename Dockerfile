@@ -6,7 +6,8 @@ COPY . ./
 RUN apk add --no-cache nodejs npm
 RUN export NODE_OPTIONS="--max-old-space-size=8192"
 RUN npm install --legacy-peer-deps
-RUN npm run build
+#RUN npm run build
+RUN npm run build:production
 
 #FROM nginx:alpine
 FROM nginx:alpine AS nginx-base
