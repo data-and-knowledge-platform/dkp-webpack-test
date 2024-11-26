@@ -3,6 +3,7 @@ FROM masdkpacr.azurecr.io/dkpalpine:latest AS builder
 WORKDIR /app
 ARG build_env
 COPY . ./
+RUN apk add --no-cache nodejs npm
 RUN export NODE_OPTIONS="--max-old-space-size=8192"
 RUN npm install --legacy-peer-deps
 RUN npm run build
